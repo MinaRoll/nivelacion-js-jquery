@@ -1,5 +1,8 @@
 $(document).ready( function(){
-
+			$('.home .js-back').hide(); //oculto mediante clase en la página home
+			$('.recipe .js-menu').hide();//oculto mediante clase en la página recipe
+		
+	
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
