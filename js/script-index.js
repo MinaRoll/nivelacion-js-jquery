@@ -1,12 +1,13 @@
 //Etapa 1
 $(document).ready( function(){
-			$('.home .js-back').hide(); //oculto mediante clase en la página home
-			$('.recipe .js-menu').hide();//oculto mediante clase en la página recipe
+	$('.home .js-back').hide(); //oculto mediante clase en la página home
+	$('.recipe .js-menu').hide();//oculto mediante clase en la página recipe
 		
-			//Etapa 2
-			function printNews(){
-				$(".news").text("NUEVAS RECETAS");//con text agrego el texto en p llamando a la clase news
-				}printNews();
+	//Etapa 2
+	function printNews(){
+		$(".news").text("NUEVAS RECETAS");//con text agrego el texto en p llamando a la clase news
+	}
+	printNews();
 
 
 			
@@ -57,10 +58,11 @@ function renderActivities(activitiesArray) {
 
 	activitiesArray.forEach(function(valor){
 		renderActivity(valor);
+	
 	});
 
 	if(activitiesArray.length > 0){
-		$(".wrapper-message").hide();
+		$(".home .wrapper-message").hide();
 	}
 
 }
@@ -72,6 +74,8 @@ function renderActivities(activitiesArray) {
 */
 function renderActivity(recipe) {
 	
+	$(".list-activities").append('<a href="#" class="item-activity"><span class="attribution"><span class="avatar"><img src=" '+ recipe.userAvatar +' " class="image-avatar"></span><span class="meta"><span class="author">' + recipe.userName.split(' ')[0] + '</span> made <span class="recipe"> '+recipe.recipeName +' </span>: '+ recipe.text+' <span class="location">&mdash; '+ recipe.place +' </span></span></span><div class="bg-image" style="background-image: url('+ recipe.image +');"></div></a>');
+
 }
 
 
