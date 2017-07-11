@@ -1,23 +1,36 @@
+//Etapa 1
 $(document).ready( function(){
 			$('.home .js-back').hide(); //oculto mediante clase en la página home
 			$('.recipe .js-menu').hide();//oculto mediante clase en la página recipe
 		
+			//Etapa 2
 			function printNews(){
-				$(".news").text("NUEVAS RECETAS");
+				$(".news").text("NUEVAS RECETAS");//con text agrego el texto en p llamando a la clase news
 				}printNews();
+
+
 			
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
+	renderActivities(activitiesArray);
+
 });
 
 
-/*
+/* Etapa 3
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+
+	recipesArray.forEach(function(valor){
+		if(valor.highlighted == true){
+    		renderRecipe(valor);
+		}
+
+	});
 }
 
 /*
