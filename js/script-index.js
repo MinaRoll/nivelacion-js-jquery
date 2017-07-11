@@ -54,6 +54,15 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
+
+	activitiesArray.forEach(function(valor){
+		renderActivity(valor);
+	});
+
+	if(activitiesArray.length > 0){
+		$(".wrapper-message").hide();
+	}
+
 }
 
 /*
